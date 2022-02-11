@@ -74,8 +74,10 @@ export class CustomerControllerBase {
     return await this.service.create({
       data: data,
       select: {
+        company: true,
         createdAt: true,
         id: true,
+        name: true,
         updatedAt: true,
       },
     });
@@ -110,8 +112,10 @@ export class CustomerControllerBase {
     const results = await this.service.findMany({
       ...args,
       select: {
+        company: true,
         createdAt: true,
         id: true,
+        name: true,
         updatedAt: true,
       },
     });
@@ -145,8 +149,10 @@ export class CustomerControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        company: true,
         createdAt: true,
         id: true,
+        name: true,
         updatedAt: true,
       },
     });
@@ -201,8 +207,10 @@ export class CustomerControllerBase {
         where: params,
         data: data,
         select: {
+          company: true,
           createdAt: true,
           id: true,
+          name: true,
           updatedAt: true,
         },
       });
@@ -237,8 +245,10 @@ export class CustomerControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          company: true,
           createdAt: true,
           id: true,
+          name: true,
           updatedAt: true,
         },
       });

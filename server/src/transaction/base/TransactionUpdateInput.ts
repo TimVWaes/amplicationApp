@@ -25,7 +25,7 @@ class TransactionUpdateInput {
   @Field(() => Number, {
     nullable: true,
   })
-  amount?: number | null;
+  amount?: number;
 
   @ApiProperty({
     required: false,
@@ -37,6 +37,6 @@ class TransactionUpdateInput {
   @Field(() => CustomerWhereUniqueInput, {
     nullable: true,
   })
-  customer?: CustomerWhereUniqueInput | null;
+  customer?: CustomerWhereUniqueInput;
 }
 export { TransactionUpdateInput };

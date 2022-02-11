@@ -73,11 +73,9 @@ export class TransactionControllerBase {
       data: {
         ...data,
 
-        customer: data.customer
-          ? {
-              connect: data.customer,
-            }
-          : undefined,
+        customer: {
+          connect: data.customer,
+        },
       },
       select: {
         amount: true,
@@ -232,11 +230,9 @@ export class TransactionControllerBase {
         data: {
           ...data,
 
-          customer: data.customer
-            ? {
-                connect: data.customer,
-              }
-            : undefined,
+          customer: {
+            connect: data.customer,
+          },
         },
         select: {
           amount: true,
