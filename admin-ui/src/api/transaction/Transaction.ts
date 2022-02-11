@@ -1,9 +1,9 @@
 import { Customer } from "../customer/Customer";
 
 export type Transaction = {
-  amount: number | null;
+  amount: number;
   createdAt: Date;
-  customer?: Customer | null;
+  customer?: Customer;
   id: string;
   updatedAt: Date;
 };

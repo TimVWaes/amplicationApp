@@ -135,11 +135,9 @@ export class TransactionResolverBase {
       data: {
         ...args.data,
 
-        customer: args.data.customer
-          ? {
-              connect: args.data.customer,
-            }
-          : undefined,
+        customer: {
+          connect: args.data.customer,
+        },
       },
     });
   }
@@ -182,11 +180,9 @@ export class TransactionResolverBase {
         data: {
           ...args.data,
 
-          customer: args.data.customer
-            ? {
-                connect: args.data.customer,
-              }
-            : undefined,
+          customer: {
+            connect: args.data.customer,
+          },
         },
       });
     } catch (error) {

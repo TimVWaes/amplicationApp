@@ -11,27 +11,18 @@
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import {
-  IsNumber,
-  IsOptional,
-  IsDate,
-  ValidateNested,
-  IsString,
-} from "class-validator";
+import { IsNumber, IsDate, ValidateNested, IsString } from "class-validator";
 import { Type } from "class-transformer";
 import { Customer } from "../../customer/base/Customer";
 @ObjectType()
 class Transaction {
   @ApiProperty({
-    required: false,
+    required: true,
     type: Number,
   })
   @IsNumber()
-  @IsOptional()
-  @Field(() => Number, {
-    nullable: true,
-  })
-  amount!: number | null;
+  @Field(() => Number)
+  amount!: number;
 
   @ApiProperty({
     required: true,
@@ -42,13 +33,12 @@ class Transaction {
   createdAt!: Date;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: () => Customer,
   })
   @ValidateNested()
   @Type(() => Customer)
-  @IsOptional()
-  customer?: Customer | null;
+  customer?: Customer;
 
   @ApiProperty({
     required: true,
